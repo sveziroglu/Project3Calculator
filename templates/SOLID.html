@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>S.O.L.I.D OOP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="font-family: Impact;font-size: 40px;">S.O.L.I.D</h2>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('calculator')}}">Calculator <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('calculations_history')}}">Calculation Records <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink" role="button">
+                        Learn More
+                    </a>
+                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('about')}}">About Me (also a rookie)</a>
+                        <a class="dropdown-item" href="{{url_for('Pylintandothers')}}">Pylint & Others</a>
+                        <a class="dropdown-item" href="{{url_for('aaatesting')}}">AAA Testing</a>
+                        <a class="dropdown-item" href="{{url_for('oop')}}">Object Oriented Programming (OOP)</a>
+                        <a class="dropdown-item" href="{{url_for('solid')}}">SOLID Object Oriented Design </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <p>
+        <img src="{{ url_for('static', filename='Images/SOLID_Principles-2.jpg') }}"; alt="SOLID"; style="width: 600px";height="500px";>
+    </p>
+
+    <p>
+    <ul>
+    <i>As we can see from the title of this page as well as the image above, SOLID is not referring to matter, but to an abbreviation that stands for design principles in object oriented programming. Each letter in S.O.L.I.D refers to a principle for development.</i>
+
+    <p><stan style="font-size: 30px; font-family: Impact;"><u>1) S: Single Responsibility Principle</u></stan></p>
+    <p><li>
+        The single responsibility principle simply means the code should have <b>one responsibility or function</b> to perform and <b>one change</b>. We can see an example below:
+    </li></p>
+    <p><code>
+        def divide_numbers(value_a, value_b)
+    </code></p>
+    <p>The code above is a single responsibility function which defines division. This code can only be used to divide numbers and the values are the only things that change but do not modify the code to have another responsibility.</p>
+
+    <p><stan style="font-size: 30px; font-family: Impact;"><u>2) O: Open-Closed Principle</u></stan></p>
+    <p><li>
+        The open-closed principle means classes, modules and functions should be <b>open</b> to <b>extensions</b> but <u> closed to modifications.</u> We can see an example below:
+</li></p>
+
+    <p><code>def convert_args_to_tuple_of_float(values):</code></p>
+
+     <code><p>list_values_float = []</p>
+         <p><i>for item in values:</i></p>
+        <p>list_values_float.append(float(item))</p>
+        <p>return tuple(list_values_float)</p>
+    </code>
+    <p> In the above code, we see an example of an extension. We are not modifying the code, but we are giving it an extension in terms of items in values to be listed in float format.</p>
+    </p>
+    </ul>
+    </p>
+<ul>
+    <p><stan style="font-size: 30px; font-family: Impact;"><u>3) L: Liskov Substitution Principle</u></stan></p>
+   <p><li> The LSP emphasizes the definition of polymorphism defined in the OOP article. Let's recap and look at an example of polymorphism:</li></p>
+    <p><b>Polymorphism:</b> Using the same function for different types of objects.</p>
+    <code>
+        <p>def get_result(self):</p>
+        <p>return self.value_a + self.value_b</p>
+    </code>
+    <p> In the polymorphic code above, all we need to realize to understand LSP is that the function "get_result" is being defined by the object "self"; thus, the function remained the same but with an interchangeable object "self" which, even if modified, would still perform the function of getting a result.  </p>
+    </ul>
+    </p>
+<ul>
+    <p><stan style="font-size: 30px; font-family: Impact;"><u>4) I: Interface Segregation Principle</u></stan></p>
+
+       <p><li>
+    The ISP means no code should have to rely on methods it does not use. To prevent this, we should break down large interfaces into smaller ones. We can think of a combination of the single responsibility principle in which the code has one responsibility with the appropriate abstraction, the pulling of higher-module data into lower ones. An example would be tuples.</li></p>
+
+    <code>
+    <p>def __init__(self,values: tuple)</p>
+    <p></p>self.values = Calculation.convert_args_to_tuple_of_float(values)</p>
+</code></p>
+    <p>Tuples can hold large amount of functions/data from another class (abstraction) with one responsibility (single responsibility principle)</p>
+
+</ul>
+    <ul>
+        <p><stan style="font-size: 30px; font-family: Impact;"><u>5) D: Dependecy Inversion Principle</u></stan></p>
+
+        <p><li>The DIP means high-level modules should not depend upon low-level modules. We can think of the parent classes vs. child classes here. Thus, we will look at abstraction, also defined in the OOP article.
+    </li></p>
+        <b>Abstraction:</b> This is the abstract class or the parent class wherein a set of methods are created to be used in child classes.
+        <b>Example:</b>
+        <code>
+            <p><i>"""This is my calculation base class / Abstract Class"""</i></p>
+            <p><b>class Calculation:</b></p>
+
+            <p>def __init__(self,value_a, value_b):</p>
+            <p>self.value_a = value_a</p>
+            <p></p>self.value_b = value_b</p>
+        </code>
+        <p>In the code above we see the parent class which defines the main method to be used throughout the calculator programming (child classes). We see here what the DIP is talking about, the child classes do not have to rely on any other code but the parent class.</p>
+
+    </li>
+        </p>
+    </ul>
+
+    <b>References Used:</b>
+    <li><a href="https://levelup.gitconnected.com/s-o-l-i-d-principles-explained-in-python-with-examples-83b2b43bdcde"/>S.O.L.I.D Principles explained in Python with examples.</li></a>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p class="text-center"> <a class="footer-repo" href="https://github.com/sveziroglu/calc2" target="_blank" title="My git repository">Calculator repo for reference | </a>
+        <a class="footer-report" href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fproject2pythonexplain.eastus.azurecontainer.io%2Findex.html" target="_blank" title="W3C Validator report"> W3C Report | </a>
+        Sandra Veziroglu-IS601 &#169;
+    </p>
+</footer>
+
+</body>
+</html>

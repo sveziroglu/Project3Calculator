@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AAA Testing</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="font-family: Impact;font-size: 40px">Arrange, Act, and Assert!</h2>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('calculator')}}">Calculator <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('calculations_history')}}">Calculation Records <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink" role="button">
+                        Learn More
+                    </a>
+                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('about')}}">About Me (also a rookie)</a>
+                        <a class="dropdown-item" href="{{url_for('Pylintandothers')}}">Pylint & Others</a>
+                        <a class="dropdown-item" href="{{url_for('aaatesting')}}">AAA Testing</a>
+                        <a class="dropdown-item" href="{{url_for('oop')}}">Object Oriented Programming (OOP)</a>
+                        <a class="dropdown-item" href="{{url_for('solid')}}">SOLID Object Oriented Design </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<p>
+    <img src="{{ url_for('static', filename='Images/ActArrange.png') }}" style="width: 600px; height: 400px"/>
+</p>
+    <p>
+    <ul>
+    <li style="font-size: 14pt">
+        The triple A testing method is a clear cut pattern that breaks down unit testing into 3 categories or "to-do's":
+        <p> 1.<b> Arrange:</b> To arrange means to perform the setup of the test.</p>
+        <p> 2.<b> Act:</b> Take the necessary 'actions' or steps to perform the test.</p>
+        <p> 3.<b> Assert:</b> Verify the results of the testing.</p>
+    </li>
+    <li style="font-size: 14pt;font-weight: bolder;">Example Code:</li>
+    <p><code style="font-size: 14pt">def test_subtraction(value_a,value_b):</code></p>
+    <p><code style="font-size: 14pt">"""return value_a - value_b"""</code></p>
+    <p><code style="font-size: 14pt">assert Subtraction.subtract(1,2) == -1</code></p>
+    </ul>
+    </p>
+    <p>
+        <b>*The importance of testing your code is to make sure your code completes operations correctly and returns correct results. If your code is off and is not returning the results you are asserting, then you know there's a mistake in the code.*
+    </b></p>
+
+    <h2 style="font-family: Impact;"><u>External Testing: Travis CI</u></h2>
+    <p>
+        <img src="{{ url_for('static', filename='Images/TravisBuild.png') }}"; alt="Sandrapassingtravis"; style="width: 1000px;height: 500px"/>
+    </p>
+
+    <p>
+    <ul>
+    <li>
+        External testing is exactly what it sounds like: testing outside of python. In this article, we will use Travis CI as an external testing source. In the picture above is the best case scenario you want to see when you test your code on Travis.</li>
+    <li>
+        Travis CI basically does what we had discussed earlier regarding linting files. Travis also checks all files for any errors and makes sure your code is written correctly.
+    </li>
+    <li> Travis CI or Travis Continuous Integration builds and tests code changes in smaller increments to help give quick feedback about the change and if it was successful.</li>
+    <li> To deploy Travis, you  need to create your code, link your code to GitHub or another program and Travis will automatically begin building your code and giving feedback. </li>
+    <li>The importance of external testing is like getting a second opinion from a doctor or in general: in case pylint missed any errors or erroneous code, Travis double checks and usually gives the same result as pylint, however, it can also become different outcomes. To be safe, external testing gives confidence that code is in great shape and changes work.</li>
+</ul>
+    </p>
+    <p>
+        <img src="{{ url_for('static', filename='Images/TravisImage.png') }}"; alt="Travishomepage" style="width: 900px; height: 400px"/>
+    </p>
+
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p class="text-center"> <a class="footer-repo" href="https://github.com/sveziroglu/calc2" target="_blank" title="My git repository">Calculator repo for reference | </a>
+        <a class="footer-report" href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fproject2pythonexplain.eastus.azurecontainer.io%2Findex.html" target="_blank" title="W3C Validator report"> W3C Report | </a>
+        Sandra Veziroglu-IS601 &#169;
+    </p>
+</footer>
+
+
+</body>
+</html>
+

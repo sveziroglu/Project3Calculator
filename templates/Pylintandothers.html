@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pylint Testing and Important Terminology</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="font-family: Impact; font-size: 40px">Pylint Testing and Important Terminology</h2>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('calculator')}}">Calculator <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('calculations_history')}}">Calculation Records <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink" role="button">
+                        Learn More
+                    </a>
+                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('about')}}">About Me (also a rookie)</a>
+                        <a class="dropdown-item" href="{{url_for('Pylintandothers')}}">Pylint & Others</a>
+                        <a class="dropdown-item" href="{{url_for('aaatesting')}}">AAA Testing</a>
+                        <a class="dropdown-item" href="{{url_for('oop')}}">Object Oriented Programming (OOP)</a>
+                        <a class="dropdown-item" href="{{url_for('solid')}}">SOLID Object Oriented Design </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <p>
+    <ul>
+    <li>First, let's understand that code has standards. PEP 8 standards, to be exact. PEP 8 is the correct format in which to write code. You don't know what that correct format is so you would use the following code in your terminal to have Python tell you how your code should be written, what's missing, where to add the missing information and if your code is overall erroneous. This code will also provide a coverage report:</li>
+    <p><span style="font-size: 20pt"><code>pytest --pylint --cov</code></span></p>
+    <li><b>Note:</b> Plyint testing is referred to as <u>"linting"</u> your files and does show throughout every piece of code and folder, file etc. on Python.</li>
+    <li> <b><u>Before</u></b> testing or 'linting' can commence, we need to make sure we have pylint installed by using code:
+    <p><span style="font-size: 20pt"><code> pip install pylint</code></span></p></li>
+    </ul>
+    </p>
+
+    <p>
+        <ul><span style="font-family: Impact;color: red; font-weight: bolder; font-size: 20pt">A FAILED PYLINT TEST:</span>
+</ul>
+    </p>
+    <p>
+        <img src="{{ url_for('static', filename='Images/Failed%20pylint.png') }}" alt="failedtest"; style="align-content: center; width: 800px"; height="200px"/>
+    </p>
+    <p>
+        <span style="align-content: center; font-size: 12pt;font-family: Arial"><i>A failed pylint test will be in red and counting how many codes have failed, together with how to fix the error/failed test, as shown in the picture above.</i></span>
+    </p>
+    <p>
+        <ul><span style="font-family: Impact;color: green; font-weight: bolder; font-size: 20pt">A PASSING PYLINT TEST:</span>
+</ul>
+    </p>
+    <p>
+        <img src="{{ url_for('static', filename='Images/Passed%20pylint.png') }}" alt="passedtest"; style="align-content: center; width: 800px; height: 200px"/>
+    </p>
+    <p>
+        <span style="align-content: center; font-size: 12pt; font-family: Arial"><i>A passing pylint testing, unlike a failed test, will be green and no fixations will be shown. Naturally, the program will also state <u>passing</u> in the code, as shown above.</i></span>
+    </p>
+    <p>
+        <h1 style="align-content: space-between; font-family: Impact;">Important Object Oriented Programming (OOP) Terminology</h1>
+    </p>
+    <p>
+    <ul>
+    <li><b>Factory:</b> An object or function made to create other objects.</li>
+
+    <li><b>Instantiation:</b>The creation of an object of a class. To see instantiation in action, use this conductor:
+        <span style="font-size: 14pt"><code><p>__init__(self,value_a, value_b)</code></span></p></li>
+
+    <li><b>Object:A collection of data or functions used to act in code. </b></li>
+
+    <li><b>Class:</b>A class or "Parent Class" is the main class in which other operations or "child classes" base their functionalities off of to perform operations.</li>
+
+    <li><b>Namespace:</b>A set of names used to identify and refer to various objects.</li>
+
+    <li><b>Constructor:</b>Initializes the objects of a class.</li>
+
+    <li><b>Fixture:</b> A fixure is specific and known data that can be repeated for testing purposes.</li>
+
+    <li><b>Type Hint:</b>Defines type of objects.</li>
+
+    <li><b>Typecast:</b> Changing data from one type to another type of data.</li>
+
+    <li><b>Unit Test:</b> Testing of the units in a program to ensure operations are doing what they are supposed to be doing.</li>
+
+    <li><b>Static Method:</b> References class name or object without creating a new object.<span style="font-size: 14pt"><code><p>@staticmethod</p>
+        <p>def add_number(value_a, value_b):</p>
+        <p>"""Adds number"""</code></span></p></li>
+
+    <li><b>Property:</b>Describes functions.</li>
+
+    <li><b>Class Method:</b>Functions specific to a class.</li>
+
+    <li><b>Facade:</b> An object that provides a "mask" over more complex code.</li>
+
+    <li><b>Design Patterns:</b> Show the interactions between classes or objects.</li>
+
+    </ul>
+    </p>
+
+</div>
+</div>
+<!-- Footer -->
+<footer>
+    <p class="text-center"> <a class="footer-repo" href="https://github.com/sveziroglu/calc2" target="_blank" title="My git repository">Calculator repo for reference | </a>
+        <a class="footer-report" href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fproject2pythonexplain.eastus.azurecontainer.io%2Findex.html" target="_blank" title="W3C Validator report"> W3C Report | </a>
+        Sandra Veziroglu-IS601 &#169;
+    </p>
+</footer>
+</body>
+</html>
+

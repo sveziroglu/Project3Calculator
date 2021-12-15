@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OOP</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="font-family: Impact;">Object Oriented Programming (OOP) with Examples</h2>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('calculator')}}">Calculator <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('calculations_history')}}">Calculation Records <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink" role="button">
+                        Learn More
+                    </a>
+                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('about')}}">About Me (also a rookie)</a>
+                        <a class="dropdown-item" href="{{url_for('Pylintandothers')}}">Pylint & Others</a>
+                        <a class="dropdown-item" href="{{url_for('aaatesting')}}">AAA Testing</a>
+                        <a class="dropdown-item" href="{{url_for('oop')}}">Object Oriented Programming (OOP)</a>
+                        <a class="dropdown-item" href="{{url_for('solid')}}">SOLID Object Oriented Design </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <p>
+    <ul>
+        <li>
+            In Python, object-oriented Programming (OOPs) is a programming paradigm that uses objects and classes in programming. It aims to implement real-world entities like inheritance, polymorphisms, encapsulation, etc. in the programming. The main concept of OOPs is to bind the data and the functions that work on that together as a single unit so that no other part of the code can access this data. (see link to this site in footer)
+        </li>
+    </ul>
+    </p>
+<h2>Definitions and Examlples of OOP Concepts:</h2>
+   <img src="{{ url_for('static', filename='Images/OOPConcepts.png') }}"; alt="concepts"; style="width: 700px; height: 500px"/>
+
+    <p>
+    <ul>
+    <li><b>Polymorphism:</b> Using the same function for different types of objects.</li>
+    <b>Example:</b>
+    <code>
+        <p>def get_result(self):</p>
+        <p>return self.value_a + self.value_b</p>
+    </code>
+    </ul>
+    </p>
+    <p>
+        <ul>
+    <li><b>Inheritance:</b> A class deriving properties from another class.</li>
+    <b>Example:</b>
+    <code>
+        <p>from calc.calculations.calculation import Calculation</p>
+    </code>
+    <p>In the above code we are inherting the properties (functions of the calculations) from the "calc" folder's "calculations" class to perform an operation in another class. Below you will see the code for the class "Calculations".</p>
+    <code>
+        <p>def __init__(self,values: tuple):</p>
+        <p>self.values = Calculation.convert_args_to_tuple_of_float(values)</p>
+    </code>
+    The above code gives another class the properties regarding values.
+    </li>
+</ul>
+    </p>
+<p>
+    <ul>
+    <li><b>Encapsulation:</b> To wrap or encapsulate data within one unit which cannot be modified.</li>
+    <b>Example:</b>
+    <code>
+        <p>def add(value_a, value_b)</p>
+    </code>
+    <p> In the above code we are defining on python how to add values a and b in the addition class.</p>
+    <p><code>
+        calc = Calculator()</code>
+        <p> In the code above we are defining the object "calc".</p>
+        <code>calc.add_number(4)</code>
+    <p>In the code above we are using object calc to call a method "add_number".</p>
+</ul>
+</p>
+    <p>
+        <ul>
+    <li><b>Abstraction:</b> This is the abstract class or the parent class wherein a set of methods are created to be used in child classes.</li>
+    <b>Example:</b>
+    <code>
+        <p><i>"""This is my calculation base class / Abstract Class"""</i></p>
+        <p><b>class Calculation:</b></p>
+
+        <p>def __init__(self,value_a, value_b):</p>
+        <p>self.value_a = value_a</p>
+        <p></p>self.value_b = value_b</p>
+    </code>
+    <p>In the code above we see the parent class which defines the main method to be used throughout the calculator programming.</p>
+</ul>
+    </p>
+    <p><b>References used:</b></p>
+    <ul>
+        <li><a href="https://www.geeksforgeeks.org/python-oops-concepts/"/>Python OOP Concepts</li></a>
+    </ul>
+
+</div>
+</div>
+<!-- Footer -->
+<footer>
+    <p class="text-center"> <a class="footer-repo" href="https://github.com/sveziroglu/calc2" target="_blank" title="My git repository">Calculator repo for reference | </a>
+        <a class="footer-report" href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fproject2pythonexplain.eastus.azurecontainer.io%2Findex.html" target="_blank" title="W3C Validator report"> W3C Report | </a>
+        Sandra Veziroglu-IS601 &#169;
+    </p>
+</footer>
+
+
+</body>
+</html>

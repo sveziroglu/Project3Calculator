@@ -1,0 +1,17 @@
+h1 {
+    color: red;
+    font-weight: bold;
+}
+.red {
+    color: red;
+}
+.bold {
+    font-weight: bold;
+}
+#primaryLinks {
+    border: 1px solid black;
+}
+#secondaryinks {
+    border: 1px solid red;
+}
+
