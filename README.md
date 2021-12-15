@@ -1,5 +1,11 @@
 # Project3Calculator
-step1:
+# Vide Demo Link here
+https://github.com/sveziroglu/Project3Calculator/raw/main/video%20demo.mp4
+
+
+# Steps to run app
+# Step 1:
 pip install -r requirements.txt
-step2:
+
+# Step 2:
 flask run
