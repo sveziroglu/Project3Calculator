@@ -1,6 +1,6 @@
 # Project3Calculator
 # Vide Demo Link here
-https://github.com/sveziroglu/Project3Calculator/raw/main/video%20demo.mp4
+https://github.com/sveziroglu/Project3Calculator/raw/main/demo%20video.mp4
 
 
 # Steps to run app
